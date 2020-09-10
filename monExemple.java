@@ -1,6 +1,15 @@
-class monExemple {
+class monExemple { // afficher x fois hello world
     public static void main(String[] args) {
-        System.out.println("Hello world !");
-        System.out.println(args[0]);
+        if (args.length > 0) {
+
+        int x = Integer.parseInt(args[0]);
+        for (int i = 0; i < x; i++) {
+            System.out.println("Hello world !");
+        }
+
+        for (int j = 0; j < args.length; j++) {
+            System.out.println(args[j]);
+        }
+    }
     }
 }
