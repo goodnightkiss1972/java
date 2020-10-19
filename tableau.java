@@ -14,6 +14,8 @@ public class tableau {
 
 	int[] tab1 = {4, 5, 1, 2, 3, 4, 0, -3, 2};
 	afficheTableau(tab1);
+	System.out.println("Indice du minimum: " + tableauIndiceMin(tab1));
+	System.out.println("Indice du maximum: " + tableauIndiceMax(tab1));
 	tab1 = permuteTableauParIndice(tab1, 2, 5);
 	tab1 = permuteTableauParIndice(tab1, 7, 1);
 	afficheTableau(tab1);
@@ -30,8 +32,9 @@ public class tableau {
     }
 
     static int[] triBulleTableauIntegerAsc(int[] tab) {
-	if (tab.length == 0)
+	if (tab.length == 0) {
 	    return tab;
+	}
 	int permutation = 9999;
 	int totalPermutations = 0;
 	while (permutation > 0) {
@@ -51,8 +54,9 @@ public class tableau {
     }
 
     static int[] triBulleTableauIntegerDesc(int[] tab) {
-	if (tab.length == 0)
+	if (tab.length == 0) {
 	    return tab;
+	}
 	int permutation = 9999;
 	int totalPermutations = 0;
 	while (permutation > 0) {
@@ -71,7 +75,32 @@ public class tableau {
 	return tab;
     }
 
+    static int tableauIndiceMin(int[] tab) {
+	if (tab.length == 0) {
+	    return -1;
+	}
+	int indiceMinimum = 0;
+	for (int i=0; i < tab.length -1; i++) {
+	    if (tab[i] < tab[indiceMinimum]) {
+		indiceMinimum = i;
+	    }
+	}
+	return indiceMinimum;
+    }
 
+    static int tableauIndiceMax(int[] tab) {
+	if (tab.length == 0) {
+	    return -1;
+	}
+	int indiceMaximum = 0;
+	for (int i=0; i < tab.length -1; i++) {
+	    if (tab[i] > tab[indiceMaximum]) {
+		indiceMaximum = i;
+	    }
+	}
+	return indiceMaximum;
+    }
+    
     static void afficheTableau(int[] tab) {
 	if (tab.length == 0) {
 	    System.out.println("Le tableau est vide.");
@@ -79,7 +108,7 @@ public class tableau {
 	else {
 	    System.out.print("[ ");
 	    for(int i=0; i < tab.length; i++) {
-		System.out.print(tab[i]);
+		System.out.format("%2d", tab[i]);
 		if (i == tab.length -1) {
 		    System.out.print(" ");
 		}
