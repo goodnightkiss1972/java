@@ -28,7 +28,11 @@ public class tableau {
 	afficheTableau(tab1);
 	triBulleTableauIntegerDesc(tab1);
 	afficheTableau(tab1);
-	
+
+	int[] tab3 = {4, 5, 1, 2, 3, 4, 0, -3, 2};
+	afficheTableau(tab3);
+	triTableauParMinimum(tab3);
+	afficheTableau(tab3);
     }
 
     static int[] triBulleTableauIntegerAsc(int[] tab) {
@@ -88,6 +92,20 @@ public class tableau {
 	return indiceMinimum;
     }
 
+    static int tableauIndiceMinSurPlage(int[] tab, int depart, int arrivee) {
+	if (tab.length == 0) {
+	    return -1;
+	}
+	int indiceMinimum = depart;
+	for (int i = depart; i < arrivee +1; i++) {
+	    if (tab[i] < tab[indiceMinimum]) {
+		indiceMinimum = i;
+	    }
+	}
+	return indiceMinimum;
+    }
+
+    
     static int tableauIndiceMax(int[] tab) {
 	if (tab.length == 0) {
 	    return -1;
@@ -99,6 +117,16 @@ public class tableau {
 	    }
 	}
 	return indiceMaximum;
+    }
+
+    static int[] triTableauParMinimum(int[] tab) {
+	if (tab.length == 0) {
+	    return tab;
+	}
+	for (int i = 0; i < tab.length -1; i++) {
+	    permuteTableauParIndice(tab, i, tableauIndiceMinSurPlage(tab, i, tab.length -1));
+	}
+	return tab;
     }
     
     static void afficheTableau(int[] tab) {
