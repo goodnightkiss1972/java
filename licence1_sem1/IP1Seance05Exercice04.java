@@ -2,14 +2,14 @@ public class IP1Seance05Exercice04 {
 
     public static void main(String args[]) {
 	int[][] essai1 = {{1,2}, {2,3}};
-	System.out.println("Pour essai1 ça doit etre (true) = " + isGrilleCarree(essai1));
+	System.out.println("Pour essai1 ça doit etre (true) = " + Carre(essai1));
 	afficherTableauPlat(aplatir(essai1));
 	int[][] essai2 = {{1,2,3},{4,5},{6,7,8}};
-	System.out.println("Pour essai2 ça doit etre (false) = " + isGrilleCarree(essai2));
+	System.out.println("Pour essai2 ça doit etre (false) = " + Carre(essai2));
 	afficherTableauPlat(aplatir(essai2));
     }
 
-    public static boolean isGrilleCarree(int tableau[][]) {
+    public static boolean Carre(int tableau[][]) {
 	// si le tableau a une longueur zero ou un
 	//on considere qu'il n'est pas carre (on ne pourra rien faire dessus)
 	if (tableau.length == 0 && tableau.length == 1) {
@@ -27,7 +27,7 @@ public class IP1Seance05Exercice04 {
     }
 
     public static int[] aplatir(int tableau[][]) {
-	if (!isGrilleCarree(tableau)) {
+	if (!Carre(tableau)) {
 	    System.out.println("Impossible d'aplatir la grille, elle n'est pas carrée.");
 	    int[] retour = {-1};
 	    return retour;
