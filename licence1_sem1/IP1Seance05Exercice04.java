@@ -17,6 +17,15 @@ public class IP1Seance05Exercice04 {
 	System.out.println("ça doit etre (false) = " + domaine(aplatir(essaiKo6)));
 	int[][] essaiOk7 = {{1,2,3},{4,5,6},{7,8,9}};
 	System.out.println("ça doit etre (true) = " + domaine(aplatir(essaiOk7)));
+	System.out.println("Est ce que essaiOk7 a bien ses elements differents ? normalement (true) = " + differents(aplatir(essaiOk7)));
+	int[][] essaiKo8 = {{1,2,1},{4,5,6},{7,8,9}};
+	System.out.println("Est ce que essaiOk7 a bien ses elements differents ? normalement (false) = " + differents(aplatir(essaiKo8)));
+	int[][] essaiKo9 = {{1,2,1},{4,5,6},{7,8,9}};
+	System.out.println("Est ce que essaiOk7 a bien ses elements differents ? normalement (false) = " + differents(aplatir(essaiKo9)));
+	int[][] essaiKo10 = {{1,2,3},{4,1,6},{7,8,9}};
+	System.out.println("Est ce que essaiOk7 a bien ses elements differents ? normalement (false) = " + differents(aplatir(essaiKo10)));
+	int[][] essaiKo11 = {{1,2,3},{4,5,6},{7,8,1}};
+	System.out.println("Est ce que essaiOk7 a bien ses elements differents ? normalement (false) = " + differents(aplatir(essaiKo11)));
     }
 
     public static boolean carre(int tableau[][]) {
@@ -60,6 +69,27 @@ public class IP1Seance05Exercice04 {
 	for (int i = 0; i < tableau.length; i++) {
 	    if (tableau[i] < 1 || tableau[i] > tableau.length) {
 		return false;
+	    }
+	}
+	return true;
+    }
+
+    public static boolean differents(int[] tableau) {
+	if (tableau.length == 0 || tableau.length == 1) {
+	    return true;
+	}
+	int present = 0;
+	for (int i = 0; i < tableau.length; i++) {
+	    for (int j = 0; j < tableau.length; j++) {
+		if (tableau[j] == tableau[i]) {
+		    present++;
+		}
+	    }
+	    if (present > 1) {
+		return false;
+	    }
+	    else {
+		present = 0;
 	    }
 	}
 	return true;
