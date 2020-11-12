@@ -1,15 +1,25 @@
 public class IP1Seance05Exercice04 {
 
     public static void main(String args[]) {
-	int[][] essai1 = {{1,2}, {2,3}};
-	System.out.println("Pour essai1 ça doit etre (true) = " + Carre(essai1));
-	afficherTableauPlat(aplatir(essai1));
-	int[][] essai2 = {{1,2,3},{4,5},{6,7,8}};
-	System.out.println("Pour essai2 ça doit etre (false) = " + Carre(essai2));
-	afficherTableauPlat(aplatir(essai2));
+	int[][] essaiKo1 = {{1,2,3},{4,5},{6,7,8}};
+	System.out.println("ça doit etre (false) = " + carre(essaiKo1));
+	afficherTableauPlat(aplatir(essaiKo1));
+	int[][] essaiKo2 = {{1,2}, {2,3}};
+	System.out.println("ça doit etre (false) = " + carre(essaiKo2));
+	afficherTableauPlat(aplatir(essaiKo2));
+	int[][] essaiKo3 = {{10,2,3},{4,5,6},{7,8,9}};
+	System.out.println("ça doit etre (false) = " + domaine(aplatir(essaiKo3)));
+	int[][] essaiKo4 = {{1,2,30},{4,5,6},{7,8,9}};
+	System.out.println("ça doit etre (false) = " + domaine(aplatir(essaiKo4)));
+	int[][] essaiKo5 = {{1,2,3},{40,5,6},{7,8,9}};
+	System.out.println("ça doit etre (false) = " + domaine(aplatir(essaiKo5)));
+	int[][] essaiKo6 = {{1,2,3},{4,5,6},{7,8,90}};
+	System.out.println("ça doit etre (false) = " + domaine(aplatir(essaiKo6)));
+	int[][] essaiOk7 = {{1,2,3},{4,5,6},{7,8,9}};
+	System.out.println("ça doit etre (true) = " + domaine(aplatir(essaiOk7)));
     }
 
-    public static boolean Carre(int tableau[][]) {
+    public static boolean carre(int tableau[][]) {
 	// si le tableau a une longueur zero ou un
 	//on considere qu'il n'est pas carre (on ne pourra rien faire dessus)
 	if (tableau.length == 0 && tableau.length == 1) {
@@ -27,7 +37,7 @@ public class IP1Seance05Exercice04 {
     }
 
     public static int[] aplatir(int tableau[][]) {
-	if (!Carre(tableau)) {
+	if (!carre(tableau)) {
 	    System.out.println("Impossible d'aplatir la grille, elle n'est pas carrée.");
 	    int[] retour = {-1};
 	    return retour;
@@ -43,6 +53,18 @@ public class IP1Seance05Exercice04 {
 	return retour;
     }
 
+    public static boolean domaine(int[] tableau) {
+	if (tableau.length == 0) {
+	    return false;
+	}
+	for (int i = 0; i < tableau.length; i++) {
+	    if (tableau[i] < 1 || tableau[i] > tableau.length) {
+		return false;
+	    }
+	}
+	return true;
+    }
+    
     public static void afficherTableauPlat(int[] tableau) {
 	if (tableau.length == 0) {
 	    System.out.println("Rien à afficher car le tableau est vide");
