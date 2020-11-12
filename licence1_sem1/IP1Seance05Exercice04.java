@@ -19,13 +19,13 @@ public class IP1Seance05Exercice04 {
 	System.out.println("ça doit etre (true) = " + domaine(aplatir(essaiOk7)));
 	System.out.println("Est ce que essaiOk7 a bien ses elements differents ? normalement (true) = " + differents(aplatir(essaiOk7)));
 	int[][] essaiKo8 = {{1,2,1},{4,5,6},{7,8,9}};
-	System.out.println("Est ce que essaiOk7 a bien ses elements differents ? normalement (false) = " + differents(aplatir(essaiKo8)));
+	System.out.println("Est ce que essaiKo8 a bien ses elements differents ? normalement (false) = " + differents(aplatir(essaiKo8)));
 	int[][] essaiKo9 = {{1,2,1},{4,5,6},{7,8,9}};
-	System.out.println("Est ce que essaiOk7 a bien ses elements differents ? normalement (false) = " + differents(aplatir(essaiKo9)));
+	System.out.println("Est ce que essaiKo9 a bien ses elements differents ? normalement (false) = " + differents(aplatir(essaiKo9)));
 	int[][] essaiKo10 = {{1,2,3},{4,1,6},{7,8,9}};
-	System.out.println("Est ce que essaiOk7 a bien ses elements differents ? normalement (false) = " + differents(aplatir(essaiKo10)));
+	System.out.println("Est ce que essaiKo10 a bien ses elements differents ? normalement (false) = " + differents(aplatir(essaiKo10)));
 	int[][] essaiKo11 = {{1,2,3},{4,5,6},{7,8,1}};
-	System.out.println("Est ce que essaiOk7 a bien ses elements differents ? normalement (false) = " + differents(aplatir(essaiKo11)));
+	System.out.println("Est ce que essaiKo11 a bien ses elements differents ? normalement (false) = " + differents(aplatir(essaiKo11)));
     }
 
     public static boolean carre(int tableau[][]) {
