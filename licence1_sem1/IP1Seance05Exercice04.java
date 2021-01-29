@@ -1,3 +1,5 @@
+package licence1_sem1;
+
 public class IP1Seance05Exercice04 {
 
     public static void main(String args[]) {
