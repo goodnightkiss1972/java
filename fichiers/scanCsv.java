@@ -15,7 +15,7 @@ public class scanCsv
          file = new FileInputStream(args[0]);
       }
       else {
-        file = new FileInputStream("data1.txt");
+        file = new FileInputStream("fichiers/data1.txt");
       }
    
       Scanner scanner = new Scanner(file);  
