@@ -1,3 +1,5 @@
+package aventure_texte;
+
 public class aventure {
 
 	public static void main(String[] args) {

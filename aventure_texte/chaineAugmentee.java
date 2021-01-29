@@ -1,3 +1,5 @@
+package aventure_texte;
+
 import java.util.StringTokenizer;
 import java.util.ArrayList;
 import java.util.List;

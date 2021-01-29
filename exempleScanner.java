@@ -22,6 +22,8 @@ public class exempleScanner {
 	System.out.println("Salary (basic): " + salary);
 
 	System.out.format("Salary (format raw n): " + salary + "%n");
-	System.out.format("Salary (format 10.3f): %10.3f %n", salary);  
+	System.out.format("Salary (format 10.3f): %10.3f %n", salary);
+
+	monScanner.close();
     }
 }
